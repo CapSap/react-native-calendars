@@ -189,8 +189,9 @@ class ReservationList extends Component {
     return (
       <FlatList
         ref={this.list}
-        style={style}
-        contentContainerStyle={this.style.content}
+        // modifying style directly
+        style={[{...style}, {backgroundColor: 'white'}]}
+        contentContainerStyle={[{...this.style.content}, {paddingTop: 20}, {paddingBottom: 20}]}
         data={this.state.reservations}
         renderItem={this.renderRow}
         keyExtractor={this.keyExtractor}
