@@ -186,11 +186,14 @@ class ReservationList extends Component {
       }
       return <ActivityIndicator style={this.style.indicator} color={theme?.indicatorColor} />;
     }
+    const newStyle = Object.assign({}, style, {backgroundColor: 'white'});
     return (
       <FlatList
         ref={this.list}
+        // style={style}
+        // contentContainerStyle={this.style.content}
         // modifying style directly
-        style={[{...style}, {backgroundColor: 'white'}]}
+        style={newStyle}
         contentContainerStyle={[{...this.style.content}, {paddingTop: 20}, {paddingBottom: 20}]}
         data={this.state.reservations}
         renderItem={this.renderRow}
